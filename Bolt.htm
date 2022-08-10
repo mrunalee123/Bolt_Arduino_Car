@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+ <head>
+        <title>Control the car</title>
+        
+         </head>
+ 
+ 
+ <body>
+
+        <center>
+             <h2> Control your car</h2>
+         <br>
+         <br>
+         <br>
+         </center>
+     
+        <center>
+            <button onclick="forward()"> &nbsp;Forward&nbsp; </button>
+        </center>
+        <br>
+        <br>
+        
+        <center>
+            <button onclick="left()"> &nbsp; Left &nbsp; </button> &nbsp;
+            <button onclick= "stop()" style="color:red;"> &nbsp;Stop&nbsp;</button>&nbsp;
+            <button onclick = "right()"> &nbsp;Right&nbsp;</button>
+        </center>
+        <br>
+        <br>
+        
+        <center>
+            <button onclick="backward()"> Backward </button>
+        </center>
+
+
+       
+    <script>
+    var http = new XMLHttpRequest();
+
+	function forward(){
+        http.open("GET","https://cloud.boltiot.com/remote/"YOUR API KEY"/serialWrite?data=FORWARD&deviceName="YOUR DEVICE ID"",false);
+        http.send();
+        }
+  
+        function backward(){
+        http.open("GET","https://cloud.boltiot.com/remote/"YOUR API KEY"/serialWrite?data=BACKWARD&deviceName="YOUR DEVICE ID"",false);
+        http.send();
+        }
+
+        function right(){
+        http.open("GET","https://cloud.boltiot.com/remote/"YOUR API KEY"/serialWrite?data=RIGHT&deviceName="YOUR DEVICE ID"",false);
+        http.send();
+        }
+
+        function left(){
+        http.open("GET","https://cloud.boltiot.com/remote/"YOUR API KEY"/serialWrite?data=LEFT&deviceName="YOUR DEVICE ID"",false);
+        http.send();
+        }
+
+        function stop(){
+        http.open("GET","https://cloud.boltiot.com/remote/"YOUR API KEY"/serialWrite?data=STOP&deviceName="YOUR DEVICE ID"",false);
+        http.send();
+        }
+        
+        </script>
+
+
+ </body>
+
+</html>
